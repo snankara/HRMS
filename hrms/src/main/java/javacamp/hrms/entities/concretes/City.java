@@ -7,31 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "job_positions")
-@Data
-@AllArgsConstructor
+@Table(name = "cities")
 @NoArgsConstructor
-public class JobPosition {
+@AllArgsConstructor
+@Data
+public class City {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name= "position_name")
-	private String positionName;
+	@Column(name = "city_name")
+	private String cityName;
 	
-	
-//	@OneToMany(mappedBy = "jobPosition")
-//	private List<Candidate> candidates;
-//	
-//	
-//	@OneToMany(mappedBy = "jobPosition")
+//	@OneToMany(mappedBy = "city")
 //	private List<JobAdvertisement> jobAdvertisements;
 }

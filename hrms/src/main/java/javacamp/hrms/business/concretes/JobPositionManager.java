@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javacamp.hrms.business.abstracts.JobPositionService;
 import javacamp.hrms.core.utilities.results.DataResult;
@@ -59,6 +60,18 @@ public class JobPositionManager implements JobPositionService{
 		}
 		
 		return false;
+	}
+
+	@Override
+	public DataResult<JobPosition> findByPositionName(@RequestParam String positionName) {
+		
+		return new SuccessDataResult<JobPosition>(this.jobPositionDao.findByPositionName(positionName),"Data Listed!");
+	}
+
+	@Override
+	public DataResult<List<JobPosition>> findByPositionNameContains(@RequestParam String positionName) {
+		
+		return new SuccessDataResult<List<JobPosition>>(this.jobPositionDao.findByPositionNameContains(positionName), "Data Listed!");
 	}
 
 }

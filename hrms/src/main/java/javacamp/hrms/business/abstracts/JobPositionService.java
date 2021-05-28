@@ -11,4 +11,6 @@ public interface JobPositionService {
 	Result update(JobPosition jobPosition);
 	Result delete(JobPosition jobPosition);
 	DataResult<List<JobPosition>> getAll();
+	DataResult<JobPosition> findByPositionName(String positionName);
+	DataResult<List<JobPosition>> findByPositionNameContains(String positionName);
 }

@@ -1,5 +1,6 @@
 package javacamp.hrms.entities.concretes;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,6 +40,5 @@ public class User {
 	public void setPasswordRepeat(String passwordRepeat) {
 		passwordRepeat = this.getPassword();
 	}
-
-	
+		
 }

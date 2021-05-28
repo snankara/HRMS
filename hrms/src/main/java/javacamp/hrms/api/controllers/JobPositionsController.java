@@ -26,15 +26,21 @@ public class JobPositionsController {
 	
 	@GetMapping("/getall")
 	public DataResult<List<JobPosition>> getAll(){
-		
 		return this.jobPositionService.getAll();
-		
+	}
+	
+	@GetMapping("/getbypositionname")
+	public DataResult<JobPosition> getByPositionName(String positionName){
+		return this.jobPositionService.findByPositionName(positionName);
+	}
+	
+	@GetMapping("/getbypositionnamecontains")
+	public DataResult<List<JobPosition>> getByPositionNameContains(String positionName){
+		return this.jobPositionService.findByPositionNameContains(positionName);
 	}
 	
 	@PostMapping("/add")
 	public Result add(JobPosition jobPosition){
-		
 		return this.jobPositionService.add(jobPosition);
-		
 	}
 }

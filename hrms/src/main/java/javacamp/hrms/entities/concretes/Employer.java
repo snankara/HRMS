@@ -1,7 +1,5 @@
 package javacamp.hrms.entities.concretes;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -35,4 +33,7 @@ public class Employer extends User{
 	
 	@Column(name = "verified_by_email")
 	private boolean verifiedByEmail;
+
+//	@OneToMany(mappedBy = "employer")
+//	private List<JobAdvertisement> jobAdversitements;
 }
