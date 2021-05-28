@@ -34,6 +34,4 @@ public class Employer extends User{
 	@Column(name = "verified_by_email")
 	private boolean verifiedByEmail;
 
-//	@OneToMany(mappedBy = "employer")
-//	private List<JobAdvertisement> jobAdversitements;
 }

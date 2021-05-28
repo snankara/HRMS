@@ -27,11 +27,4 @@ public class JobPosition {
 	@Column(name= "position_name")
 	private String positionName;
 	
-	
-//	@OneToMany(mappedBy = "jobPosition")
-//	private List<Candidate> candidates;
-//	
-//	
-//	@OneToMany(mappedBy = "jobPosition")
-//	private List<JobAdvertisement> jobAdvertisements;
 }
