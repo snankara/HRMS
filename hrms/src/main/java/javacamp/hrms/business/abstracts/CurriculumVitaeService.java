@@ -8,6 +8,7 @@ import javacamp.hrms.entities.concretes.CurriculumVitae;
 
 public interface CurriculumVitaeService {
 	Result add(CurriculumVitae curriculumVitae);
+	DataResult<List<CurriculumVitae>> findByCandidateId(int candidateId);
 	DataResult<List<CurriculumVitae>> getAll();
 	
 }

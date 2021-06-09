@@ -57,4 +57,10 @@ public class CurriculumVitaeManager implements CurriculumVitaeService{
 		}	
 	}
 
+	@Override
+	public DataResult <List<CurriculumVitae>> findByCandidateId(int candidateId) {
+	
+		return new SuccessDataResult<List<CurriculumVitae>>(this.curriculumVitaeDao.findByCandidateId(candidateId));
+	}
+
 }

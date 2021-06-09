@@ -33,12 +33,12 @@ public class JobAdvertisementsController {
 		return this.jobAdvertisementService.add(jobAdvertisement);
 	}
 	
-	@GetMapping("/getall")
+	@GetMapping("/getAll")
 	public DataResult<List<JobAdvertisement>> getAll(){
 		return this.jobAdvertisementService.getAll();
 	}
 	
-	@GetMapping("/getbyisactive")
+	@GetMapping("/getByIsActive")
 	public DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive){
 		return this.jobAdvertisementService.findByIsActive(isActive);
 	}

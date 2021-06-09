@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -53,19 +54,24 @@ public class CurriculumVitaesController {
 	}
 
 	
-	@GetMapping("/getall")
+	@GetMapping("/getAll")
 	public DataResult<List<CurriculumVitae>> getAll(){
 		return this.curriculumVitaeService.getAll();
 	}
 	
-	@GetMapping("/getallCandidateEducationEndDateDesc")
+	@GetMapping("/getAllCandidateEducationEndDateDesc")
 	public DataResult<List<Education>> getAllEducationDesc(){
 		return this.educationService.getAllSorted();
 	}
 	
-	@GetMapping("/getallCandidateExperienceEndDateDesc")
+	@GetMapping("/getAllCandidateExperienceEndDateDesc")
 	public DataResult<List<Experience>> getAllExperienceDesc(){
 		return this.experienceService.getAllSorted();
+	}
+	
+	@GetMapping("/getByCandidateId")
+	public DataResult <List<CurriculumVitae>> findByCandidateId(@RequestParam int candidateId){
+		return this.curriculumVitaeService.findByCandidateId(candidateId);
 	}
 	
 }
