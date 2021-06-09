@@ -1,40 +1,41 @@
 package javacamp.hrms.entities.concretes;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Table(name = "languages")
 @Entity
-@Table(name = "cities")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","JobAdvertisement"})
-public class City {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "curriculumVitae"})
+public class Language {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "city_name")
-	private String cityName;
-	
-	@OneToMany(mappedBy = "city")
-	@JsonIgnore
-	private List<JobAdvertisement> jobAdvertisement;
+	@ManyToOne()
+	@JoinColumn(name = "curriculum_vitae_id", referencedColumnName = "id")
+	private CurriculumVitae curriculumVitae;
 
+	@Column(name = "language_name")
+	private String languageName;
+	
+	@Column(name = "level")
+	private byte level;
+	
 }

@@ -1,14 +1,19 @@
 package javacamp.hrms.entities.concretes;
 
 import java.time.LocalDate;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,4 +49,16 @@ public class Candidate extends User{
 	@ManyToOne()
 	@JoinColumn(name = "job_position_id")
 	private JobPosition jobPosition;
+	
+	@OneToMany(mappedBy = "candidate")
+	@JsonIgnore
+	private List<CurriculumVitae> curriculumVitaes;
+	
+//	@OneToMany(mappedBy = "candidate")
+//	@JsonIgnore
+//	private List<Technology> technologies;
+	
+	
+	
+	
 }
