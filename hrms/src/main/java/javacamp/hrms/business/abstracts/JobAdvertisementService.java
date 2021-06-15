@@ -12,4 +12,5 @@ public interface JobAdvertisementService {
 	Result delete(JobAdvertisement jobAdvertisement);
 	DataResult<List<JobAdvertisement>> getAll();
 	DataResult<List<JobAdvertisement>> findByIsActive(boolean isActive);
+	Result activateJobAdvertisement(JobAdvertisement jobAdvertisement);
 }

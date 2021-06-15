@@ -8,4 +8,5 @@ import javacamp.hrms.entities.concretes.JobAdvertisement;
 
 public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Integer>{
 	List<JobAdvertisement> findByIsActive(boolean isActive);
+	JobAdvertisement findById(int id);
 }

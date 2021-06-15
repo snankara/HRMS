@@ -28,7 +28,7 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 
 	@Override
 	public Result add(@RequestBody JobAdvertisement jobAdvertisement) {
-		jobAdvertisement.setActive(true);
+//		jobAdvertisement.setActive(true);
 		jobAdvertisement.setStartDate(LocalDate.now());
 		this.jobAdvertisementDao.save(jobAdvertisement);
 		return new SuccessResult("Added!");
@@ -55,6 +55,14 @@ public class JobAdvertisementManager implements JobAdvertisementService{
 	public DataResult<List<JobAdvertisement>> findByIsActive(@RequestParam boolean isActive) {
 		
 		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findByIsActive(isActive));
+	}
+
+	@Override
+	public Result activateJobAdvertisement(JobAdvertisement jobAdvertisement) {
+//		JobAdvertisement jobAdvertisement = this.jobAdvertisementDao.findById(jobAdvertisementId);
+		jobAdvertisement.setActive(true);
+		this.jobAdvertisementDao.save(jobAdvertisement);
+		return new SuccessResult("Successfuly!");
 	}
 
 }
