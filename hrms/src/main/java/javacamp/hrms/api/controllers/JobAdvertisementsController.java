@@ -50,5 +50,16 @@ public class JobAdvertisementsController {
 		return this.jobAdvertisementService.activateJobAdvertisement(jobAdvertisement);
 	}
 
+	@GetMapping("/getAllByPage")
+	public DataResult<List<JobAdvertisement>> getAll(int pageNo, int pageSize){
+		return this.jobAdvertisementService.getAll(pageNo, pageSize);
+	}
+	
+	@GetMapping("/getAllByActiveAndPageable")
+	public DataResult<List<JobAdvertisement>> getAllByActiveAndPageable(boolean isActive, int pageNo, int pageSize){
+		return this.jobAdvertisementService.getAllByActiveAndPageable(isActive,pageNo,pageSize);
+	}
+
+	
 
 }

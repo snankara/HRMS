@@ -12,5 +12,7 @@ public interface JobAdvertisementService {
 	Result delete(JobAdvertisement jobAdvertisement);
 	DataResult<List<JobAdvertisement>> getAll();
 	DataResult<List<JobAdvertisement>> findByIsActive(boolean isActive);
+	DataResult<List<JobAdvertisement>> getAllByActiveAndPageable(boolean isActive, int pageNo, int pageSize);
 	Result activateJobAdvertisement(JobAdvertisement jobAdvertisement);
+	DataResult<List<JobAdvertisement>> getAll(int pageNo, int pageSize);
 }
