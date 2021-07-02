@@ -1,30 +1,22 @@
 package javacamp.hrms.entities.concretes;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
 @Data
-@Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Table(name = "update_for_employers")
+public class EmployerForUpdate{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
@@ -36,5 +28,23 @@ public class User {
 	
 	@Column(name = "password_repeat")
 	private String passwordRepeat;	
-		
+	
+	@Column(name = "company_name")
+	private String companyName;
+	
+	@Column(name = "web_site")
+	private String webSite;
+	
+	@Column(name = "phone_number")
+	private String phoneNumber;
+	
+	@Column(name = "verified_by_employee")
+	private boolean verifiedByEmployee;
+	
+	@Column(name = "update_confirmation")
+	private boolean updateConfirmation;
+	
+	@Column(name = "verified_by_email")
+	private boolean verifiedByEmail;
+	
 }

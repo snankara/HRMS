@@ -40,6 +40,12 @@ public class JobAdvertisementsController {
 		return this.jobAdvertisementService.getAll();
 	}
 	
+	@GetMapping("/findByCityNameAndWorkingTime")
+	public DataResult<List<JobAdvertisement>> findByCityName(String cityName,String workingTimeName){
+		return this.jobAdvertisementService.findByCityName(cityName,workingTimeName);
+	}
+
+	
 	@GetMapping("/getByIsActive")
 	public DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive){
 		return this.jobAdvertisementService.findByIsActive(isActive);
@@ -60,6 +66,10 @@ public class JobAdvertisementsController {
 		return this.jobAdvertisementService.getAllByActiveAndPageable(isActive,pageNo,pageSize);
 	}
 
-	
+	@GetMapping("/findByEmployerId")
+	public DataResult<List<JobAdvertisement>> findByEmployerId(int id){
+		return this.jobAdvertisementService.findByEmployerId(id);
+	}
 
+	
 }

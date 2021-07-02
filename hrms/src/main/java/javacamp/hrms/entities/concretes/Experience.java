@@ -2,8 +2,10 @@ package javacamp.hrms.entities.concretes;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,9 +36,8 @@ public class Experience {
 	@JoinColumn(name = "curriculum_vitae_id", referencedColumnName = "id")
 	private CurriculumVitae curriculumVitae;
 	
-	@ManyToOne()
-	@JoinColumn(name = "job_position_id", referencedColumnName = "id")
-	private JobPosition jobPosition;
+	@Column(name = "job_position_name")
+	private String jobPositionName;
 	
 	@Column(name = "company_name")
 	private String companyName;

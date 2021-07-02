@@ -29,9 +29,9 @@ public class CandidateImageManager implements CandidateImageService{
 	}
 	
 	@Override
-	public Result add(int curriculumVitaeId, MultipartFile file) {
+	public Result add(int id, MultipartFile file) {
 		Map<String, String> uploadFile = this.cloudinaryImageService.uploadImage(file).getData();
-		CandidateImage candidateImage = this.candidateImageDao.findByCurriculumVitaeId(curriculumVitaeId);
+		CandidateImage candidateImage = this.candidateImageDao.findByCurriculumVitaeId(id);
 		candidateImage.setImageUrl(uploadFile.get("url"));
 		this.candidateImageDao.save(candidateImage);
 		return new SuccessResult("File Added!");

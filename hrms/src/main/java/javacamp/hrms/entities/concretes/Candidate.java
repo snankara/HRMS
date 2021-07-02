@@ -53,12 +53,5 @@ public class Candidate extends User{
 	@OneToMany(mappedBy = "candidate")
 	@JsonIgnore
 	private List<CurriculumVitae> curriculumVitaes;
-	
-//	@OneToMany(mappedBy = "candidate")
-//	@JsonIgnore
-//	private List<Technology> technologies;
-	
-	
-	
-	
+		
 }

@@ -36,6 +36,9 @@ public class Employer extends User{
 	@Column(name = "verified_by_employee")
 	private boolean verifiedByEmployee;
 	
+	@Column(name = "update_confirmation")
+	private boolean updateConfirmation;
+	
 	@Column(name = "verified_by_email")
 	private boolean verifiedByEmail;
 	

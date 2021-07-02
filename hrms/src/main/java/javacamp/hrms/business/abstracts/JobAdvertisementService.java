@@ -14,5 +14,7 @@ public interface JobAdvertisementService {
 	DataResult<List<JobAdvertisement>> findByIsActive(boolean isActive);
 	DataResult<List<JobAdvertisement>> getAllByActiveAndPageable(boolean isActive, int pageNo, int pageSize);
 	Result activateJobAdvertisement(JobAdvertisement jobAdvertisement);
-	DataResult<List<JobAdvertisement>> getAll(int pageNo, int pageSize);
+	DataResult<List<JobAdvertisement>> getAll(int pageNo, int pageSize);	
+	DataResult<List<JobAdvertisement>>findByCityName(String cityName,String workingTimeName);
+	DataResult<List<JobAdvertisement>> findByEmployerId(int id);
 }

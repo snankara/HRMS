@@ -24,7 +24,7 @@ public class EducationManager implements EducationService{
 
 	@Override
 	public DataResult<List<Education>> getAllSorted() {
-		Sort sort = Sort.by(Sort.Direction.DESC,"endDate");		
+		Sort sort = Sort.by(Sort.Direction.DESC,"endDate");	
 		return new SuccessDataResult<List<Education>>(this.educationDao.findAll(sort), "Data Listed");
 	}
 		
